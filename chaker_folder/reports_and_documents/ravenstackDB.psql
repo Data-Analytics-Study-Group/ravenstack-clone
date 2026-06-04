@@ -73,10 +73,17 @@ CREATE TABLE IF NOT EXISTS support_tickets (
     resolution_time_hours NUMERIC(8,2),
     priority TEXT,
     first_response_time_minutes INTEGER,
-    satisfaction_score INTEGER,
+    satisfaction_score NUMERIC(8,2),
     escalation_flag BOOLEAN,
 
     CONSTRAINT fk_account
         FOREIGN KEY (account_id)
         REFERENCES accounts(account_id)
 );
+
+
+-- \copy accounts FROM 'ravenstack_accounts.csv' CSV HEADER;
+-- \copy events FROM 'ravenstack_churn_events.csv' CSV HEADER;
+-- \copy feature_usage FROM 'ravenstack_feature_usage.csv' CSV HEADER;
+-- \copy subscriptions FROM 'ravenstack_subscriptions.csv' CSV HEADER;
+-- \copy support_tickets FROM 'ravenstack_support_tickets.csv' CSV HEADER;
