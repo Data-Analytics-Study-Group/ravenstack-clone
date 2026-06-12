@@ -120,7 +120,7 @@ Examples:
 
 Examples:
 
-- your-name/feature-desscription
+- your-name/feature-description
 - feature/usage-cleaning
 - bugfix/missing-user-ids
 
