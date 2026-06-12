@@ -10,7 +10,7 @@ This project focuses on data engineering, data analysis, and machine learning us
 The repository contains project code, documentation, notebooks, and supporting resources used throughout the project lifecycle.
 
 ## Repository Structure
-
+```
 .
 ├── data/
 │   ├── raw/
@@ -22,8 +22,12 @@ The repository contains project code, documentation, notebooks, and supporting r
 ├── reports/
 ├── docs/
 │   └── drafts/
+├── .env.example
+├── requirements.txt
 ├── README.md
 └── CONTRIBUTING.md
+```
+
 
 ## Getting Started
 
