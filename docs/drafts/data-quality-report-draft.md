@@ -63,4 +63,4 @@ Open. Pending team review and approval of the proposed resolution.
 
 | Date | Author | Change |
 |--------|--------|--------|
-| YYYY-MM-DD | Name | Initial draft |
+| 2026-06-12 | Audrey | Initial draft |

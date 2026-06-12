@@ -9,6 +9,9 @@
 
 The repository contains project code, documentation, notebooks, and supporting resources used throughout the project lifecycle.
 
+## Repository Structure
+
+=======
 ## 👥 Team Members & Roles
 | Name | Discord | Role |
 |---|---|---|
@@ -33,6 +36,7 @@ The repository contains project code, documentation, notebooks, and supporting r
 | **Version control** | Git / GitHub |
 
 ## 📁 Repository Structure
+```
 .
 ├── data/
 │   ├── raw/
@@ -44,8 +48,12 @@ The repository contains project code, documentation, notebooks, and supporting r
 ├── reports/
 ├── docs/
 │   └── drafts/
+├── .env.example
+├── requirements.txt
 ├── README.md
 └── CONTRIBUTING.md
+```
+
 
 ## 🎯 Getting Started
 
