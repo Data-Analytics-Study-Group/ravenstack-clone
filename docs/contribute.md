@@ -1,29 +1,16 @@
 Hello all! I want to thank everyone who has contributed to our project. We appreciate all your efforts. 
 
-## Branching
+## Getting Started
 
-During our time working on this project we will either be assigned or take on different tasks. It is crucial that we do so on a different branch. We are following GitHub workflow meaning all branches are merged into `main`. This is to avoid unnecessary changes `main`. After cloning the repo on your local device, be sure to update your cloned repo by using commands in step one below. Once `main` is up to date, create a new branch where you will work on your assigned task(s). Be sure to review branch naming conventions before creating a new branch. Each task should have its own branch, avoid making a large amount of changes on a single branch as it can complicate the review process.
-
+1. Clone git repo
 ```bash
-# Step 1 — Make sure your local main is up to date before branching
-git checkout main
-git pull origin main
-
-# Step 2 — Create your new branch and switch to it
-git checkout -b <type>/<short-description>
-
-# Example
-git checkout -b explore/customer-churn-patterns
+git clone <https://github.com/Data-Analytics-Study-Group/ravenstack-pl.git>
+cd ravenstack-pl
 ```
+2. Create a new branch for your work: `git checkout -b <type>/<short-description>`
+
 
 ## Branch Naming Convention
-
-All branches must follow this format:
-```
-<type>/<short-description>
-```
-
-### Types
 
 | Prefix | Purpose |
 |--------|---------|
@@ -55,24 +42,44 @@ All branches must follow this format:
 
 ## Commit and PR
 
+### Commit Branch
+
 When you have finished your tasks commit your branch using the commands below:
 
-```bash
-# Step 1 — See what has changed
-git status
+1. Ensure your branch is up to date with `main` by running: `git pull main`
 
-# Step 2 — Stage your changes
-git add .                  # stages all modified or new files
+2. Check what files are staged: `git status`
 
-git add <file_name>        # or stage a specific file, e.g. git add docs/contribute.md
+3. Stage all modified files `git add .` or stage specific files: `git add <file_name>`                
 
-# Step 3 — Commit your changes
-git commit -m "docs: create contribute markdown"
+4. Commit your changes: `git commit -m "docs: create contribute markdown"`
 
-# Step 4 — Push branch to GitHub
-git push origin <type>/<short-description>
-# e.g. git push origin docs/create-contribute-markdown
-```
-Once pushed, go to the repository on GitHub. You will see a prompt that says **Compare & Pull Request** - click it, fill out PR template and submit for review. Every PR requires one other team member to review and approve the changes before merging with the `main`.
+5. Push branch to GitHub: `git push origin <type>/<short-description>`
+
+### Make a Pull Request (PR)
+
+Once you have pushed branch, go to the repository on GitHub. Then:
+
+1. Open PR by clicking ###Compare & Pull Request### in the yellow banner
+
+2. In the PR template, write what changes were made and why in the Summary section.
+
+3. Click the right label
+
+4. Place a snapshot (if necessary)
+
+### Review PR
+
+- Every PR must be reviewed by at least one team member
+
+- The reviewer must check that code is clean and safe to merger in `main`
+
+- If any issues or concerns are found in code leave a comment, the author will mmake updates and re-request PR review
+
+### Approved PR
+
+- Once approved merge branch into `main`
+
+- Delete branch after merge
 
 
