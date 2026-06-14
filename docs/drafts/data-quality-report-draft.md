@@ -13,13 +13,9 @@ Findings should be reviewed before analysis, reporting, or model development.
 | Table | Field | Issue | Status |
 |---------|---------|---------|---------|
 | feature_usage | usage_id | Duplicate values found in a field expected to be unique | Open |
-|---------|---------|---------|---------|
 | events  | feedback_text | 148 missing values (might be normal since filling feedback text was optional) | Open |
-|---------|---------|---------|---------|
 | support_tickets | satisfaction_score | 825 missing values | Open |
-|---------|---------|---------|---------|
 |subscription | end_date | 4514 missing values(normal since those are the client that didn't churn) | Open |
-|---------|---------|---------|---------|
 
 
 ---
