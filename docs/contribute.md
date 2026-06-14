@@ -80,6 +80,6 @@ Once you have pushed branch, go to the repository on GitHub. Then:
 
 - Once approved merge branch into `main`
 
-- Delete branch after merge
+- Delete branch after merge.
 
 
