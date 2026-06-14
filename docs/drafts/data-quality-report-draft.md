@@ -68,3 +68,4 @@ Open. Pending team review and approval of the proposed resolution.
 | Date | Author | Change |
 |--------|--------|--------|
 | 2026-06-12 | Audrey | Initial draft |
+| 2026-06-14 | Chaker | updating summary table |
