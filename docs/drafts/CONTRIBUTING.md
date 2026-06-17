@@ -15,7 +15,11 @@ cd <ravenstack-pl>
 ```
 
 2. Create a new branch for your work:
-`git checkout -b your-name/feature-description`
+`git checkout -b prefix/purpose-description`
+Example:
+`git checkout -b data/data-cleaning`
+
+Please see 'Branch Naming Convention' below for more information.
 
 3. Install dependencies (if applicable):
 `pip install -r requirements.txt`
@@ -115,17 +119,40 @@ Examples:
 - smart-framework.pdf
 
 
-## Branch Names
-- Use lowercase letters and hyphens (kebab-case).
+## Branch Naming Convention
 
-Examples:
+| Prefix | Purpose |
+|--------|---------|
+| `data/` | Data cleaning or pipeline changes |
+| `explore/` | EDA or one-off investigations |
+| `pipeline/` | ETL/ELT workflows and orchestration (Airflow, dbt, etc.) |
+| `fix/` | Fixing a bug in code, a broken pipeline, or bad logic |
+| `docs/` | READMEs, data dictionaries, methodology writeups |
+| `eval/` | Model evaluation, metrics, and validation work |
+| `viz/` | Dashboards, charts, and reporting visuals |
 
-- your-name/feature-description
-- feature/usage-cleaning
-- bugfix/missing-user-ids
+### Rules for the Description
+- **2–5 words max** — keep it concise
+- **Use imperative form** — `normalize-sales-schema` not `normalized-sales-schema`
+- **Use lowercase with hyphens (kebab-case)** — `fix-null-join-logic` not `Fix_Null_Join_Logic`
+- **Be precise** — anyone reading the branch name should know what it adds to the project
+- **Avoid vague names** — `fix/updates` or `data/changes` tells nobody anything
+
+### Examples
+
+| ✅ Good | ❌ Bad |
+|--------|--------|
+| `data/normalize-sales-schema` | `data/changes` |
+| `explore/customer-churn-patterns` | `explore/analysis` |
+| `pipeline/daily-revenue-aggregation` | `pipeline/new-pipeline` |
+| `fix/null-handling-join-step` | `fix/bug` |
+| `viz/executive-kpi-dashboard` | `viz/dashboard2` |
 
 
 ## Git Workflow
+### Rule: Always commit on your feature branch, never directly on main.  
+
+For a detailed guide on working with branches and Pull Requests, see the [Version Control Guide](version-control.md).
 
 1. Make changes in a feature branch
 2. Commit changes with clear messages
@@ -167,6 +194,7 @@ If you identify a bug, improvement, or task that is not listed:
 1. Go to the **Issues** tab
 2. Click **New Issue**
 3. Select the appropriate label (e.g. `bug`, `feature`, `discussion`)
+4. Select the appropriate milestone
 4. Provide a clear description, including:
    - What the issue is
    - Why it matters
@@ -176,15 +204,24 @@ If you identify a bug, improvement, or task that is not listed:
 
 ### Linking Issues to Work
 
-When starting work on an issue:
+When working on an issue:
 
-- Create a new branch for the task
-- Reference the issue number in your branch or commit messages
+- Create a feature branch for the task.
+- Open a Pull Request (PR) when the work is ready.
+- Reference the issue number in the PR description when applicable.
+- When the PR is merged into main, GitHub automatically closes all three issues in the example below.Git scans the PR description and automatically closes the issue when it detects these keywords:
 
 Example:
 
-```bash id="r7qz1m"
-git checkout -b feature/usage-cleaning-#12
+```text
+#To link to and close an issue:
+Closes #12
+Resolves #11
+Fixes #15
+
+#To link to an issue but not close it:
+#8
+Related to #5
 ```
 
 ### Notes
