@@ -2,6 +2,9 @@
 # Data
 # =========================
 
+# Personal workspace for each developer
+personal/
+
 # Raw source data (CSV, Excel, JSON, Parquet, database exports).
 # Files in this folder are not tracked by Git.
 data/raw/*
