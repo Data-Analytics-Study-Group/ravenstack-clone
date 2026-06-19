@@ -69,3 +69,4 @@ Open. Pending team review and approval of the proposed resolution.
 |--------|--------|--------|
 | 2026-06-12 | Audrey | Initial draft |
 | 2026-06-14 | Chaker | updating summary table |
+| 2026-06-19 | Chaker | Preparing the first step towards EDA with python |
