@@ -1,58 +1,79 @@
-import psycopg
 import pandas as pd
 
 
-conn_string = "postgresql://neondb_owner:npg_bJClhV9r5mqi@ep-icy-dawn-apa9ijea-pooler.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+# -------------------------
+# Individual table loaders
+# -------------------------
 
-conn = psycopg.connect(conn_string)
-
-def load_data():
-
-    pass
-
-def load_accounts():
+def load_accounts(conn):
     query = "SELECT * FROM accounts"
-    df_accounts = pd.read_sql(query, conn)
-    return df_accounts
+    return pd.read_sql(query, conn)
 
-def load_events():
+
+def load_events(conn):
     query = "SELECT * FROM events"
-    df_events = pd.read_sql(query, conn)
-    return df_events
+    return pd.read_sql(query, conn)
 
-def load_subscriptions():
+
+def load_subscriptions(conn):
     query = "SELECT * FROM subscriptions"
-    df_subscriptions = pd.read_sql(query, conn)
-    return df_subscriptions
+    return pd.read_sql(query, conn)
 
-def load_feature_usage():
+
+def load_feature_usage(conn):
     query = "SELECT * FROM feature_usage"
-    df_feature_usage = pd.read_sql(query, conn)
-    return df_feature_usage
+    return pd.read_sql(query, conn)
 
-def load_support_tickets():
+
+def load_support_tickets(conn):
     query = "SELECT * FROM support_tickets"
-    df_support_tickets = pd.read_sql(query, conn)
-    return df_support_tickets
+    return pd.read_sql(query, conn)
 
-if __name__ == "__main__":
-    df_accounts = load_accounts()
-    df_events = load_events()
-    df_subscriptions = load_subscriptions()
-    df_feature_usage = load_feature_usage()
-    df_support_tickets = load_support_tickets()
+# -------------------------
+# Convenience loader (optional)
+# -------------------------
 
-    print("Accounts DataFrame:")
-    print(df_accounts.head())
+def load_data(conn):
+    """
+    Loads all tables into a dictionary for quick EDA.
+    """
+    return {
+        "accounts": load_accounts(conn),
+        "events": load_events(conn),
+        "subscriptions": load_subscriptions(conn),
+        "feature_usage": load_feature_usage(conn),
+        "support_tickets": load_support_tickets(conn),
+    }
 
-    print("\nEvents DataFrame:")
-    print(df_events.head())
 
-    print("\nSubscriptions DataFrame:")
-    print(df_subscriptions.head())
+# -------------------------------------------------------
+# Manual test block commented out (for quick local debugging only)
+# -------------------------------------------------------
+# This block was used to test DB connection + verify
+# that all loader functions return expected DataFrames.
+# It is not actually being used in notebooks or production code.
+# The block of code below has therefore been commented out
 
-    print("\nFeature Usage DataFrame:")
-    print(df_feature_usage.head())
-
-    print("\nSupport Tickets DataFrame:")
-    print(df_support_tickets.head())
+# if __name__ == "__main__":
+#     conn = get_connection()
+#
+#     df_accounts = load_accounts(conn)
+#     df_events = load_events(conn)
+#     df_subscriptions = load_subscriptions(conn)
+#     df_feature_usage = load_feature_usage(conn)
+#     df_support_tickets = load_support_tickets(conn)
+#
+#     print("Accounts DataFrame:")
+#     print(df_accounts.head())
+#
+#     print("\nEvents DataFrame:")
+#     print(df_events.head())
+#
+#     print("\nSubscriptions DataFrame:")
+#     print(df_subscriptions.head())
+#
+#     print("\nFeature Usage DataFrame:")
+#     print(df_feature_usage.head())
+#
+#     print("\nSupport Tickets DataFrame:")
+#     print(df_support_tickets.head())
