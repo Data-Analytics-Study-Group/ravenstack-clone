@@ -152,7 +152,7 @@ Examples:
 ## Git Workflow
 ### Rule: Always commit on your feature branch, never directly on main.  
 
-For a detailed guide on working with branches and Pull Requests, see the [Version Control Guide](version_control.md).
+For a detailed guide on working with branches and Pull Requests, see the [Version Control Guide](version-control.md).
 
 1. Make changes in a feature branch
 2. Commit changes with clear messages
