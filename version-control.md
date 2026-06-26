@@ -7,7 +7,8 @@ This guide describes a standard GitHub workflow for collaborating in a repositor
 - Branches
 - Commits
 - Pull Requests (PRs)
-- Merging into main
+- ⚠️  Important: Merging into main
+- ⚠️  Important: Shared Branch for Team Collaboration - How To
 - This workflow prevents accidental changes to main and makes collaboration safer.
 
 ## Basic Concept
@@ -30,7 +31,7 @@ Branch → Pull Request → Review → Merge into main
 
 ## Standard Workflow
 
-### Step 1: Clone Repository (First Time Only)
+### 💡 Step 1: Clone Repository (First Time Only)
 
 ```bash
 git clone <https://github.com/Data-Analytics-Study-Group/ravenstack-pl.git>
@@ -42,7 +43,7 @@ Move into the repository:
 cd project
 ```
 
-### Step 2: Check Current Branch You Are In
+### 💡 Step 2: Check Current Branch You Are In
 
 ```bash
 git branch
@@ -54,7 +55,7 @@ Example:
 * main
 ```
 
-### Step 3: Update Local main 
+### 💡 Step 3: Update Local main 
 
 Always begin work from an updated main.
 
@@ -64,7 +65,7 @@ git pull origin main
 ```
 What git pull does: Fetches the latest changes from the remote main branch and merges them into your local main.
 
-### Step 4: Create a New Branch For Your Work
+### 💡 Step 4: Create a New Branch For Your Work
 *Please refer to the section 'Branch Naming Convention' below for guidelines on branch naming.*
 
 Create and switch to a new branch in one command:
@@ -127,11 +128,69 @@ Example output:
 
 # ❗️ Important: Ensure you are on your branch before making commits to branch.
 
-### Step 5: Make Changes
+### 💡 Step 5: Make Changes
 
 Edit files in your editor or IDE.
 
-### Step 6: Check for Changes to the Branch
+
+# ⚠️ ⚠️ ⚠️  IMPORTANT: KEEPING YOUR WORK SAFE WHEN WORKING ON A SHARED FEATURE BRANCH ⚠️ ⚠️ ⚠️ 
+
+## ⚠️ Best Practice: Commit (or Stash) Before Pulling
+
+Before running `git pull`, check whether you have any uncommitted changes:
+
+```bash
+git status
+```
+
+If your working directory is clean, you can safely pull the latest changes:
+
+```bash
+git pull
+```
+
+If you have uncommitted changes, choose one of the following options before pulling.
+
+### Option 1 (Recommended): Commit Your Changes
+
+If you have completed a logical piece of work, stage and commit your changes first:
+
+```bash
+git add .
+git commit -m "Describe your changes"
+```
+
+Then pull the latest changes:
+
+```bash
+git pull
+```
+
+### Option 2: Stash Unfinished Work
+
+If your changes are not yet ready to commit, temporarily save them using `git stash`:
+
+```bash
+git stash
+git pull
+git stash pop
+```
+
+### Why Is This Recommended?
+
+Pulling while you have uncommitted changes can:
+
+- Cause Git to refuse the pull if incoming changes would overwrite your local work.
+- Make merge conflicts more difficult to resolve because your changes are not yet saved as a commit.
+- Increase the risk of accidentally losing track of unfinished work.
+
+By committing (or stashing) first, your work is safely preserved before incorporating changes from the remote repository.
+
+> **Best Practice:** Pull frequently and commit small, logical units of work. Regular synchronization with the remote repository helps minimize merge conflicts and makes collaboration much easier.
+
+
+
+### 💡 Step 6: Check for Changes to the Branch
 Someone else may have committed some work to the branch.
 Check how your current files differ from the latest commit on the branch you're currently on.
 
@@ -145,7 +204,7 @@ Example output:
 modified: script.py
 ```
 
-### Step 7: Stage Files
+### 💡 Step 7: Stage Files
 Stage all modified files `git add .` or stage specific files: `git add <file_name>`:
 
 Example: Stage a specific file
@@ -160,7 +219,7 @@ Or stage all changes (new, modified, deleted) in the current directory:
 git add .
 ```
 
-### Step 8: Commit Changes
+### 💡 Step 8: Commit Changes
 
 Create a snapshot of your work.
 
@@ -177,7 +236,7 @@ Examples of good commit messages:
 
 ## Rule: Always commit on your feature branch, never directly on main.
 
-### Step 9: Push Branch & Set Upstream Tracking to GitHub
+### 💡 Step 9: Push Branch & Set Upstream Tracking to GitHub
 
 *Specifiying upstream tracking is done only for your first push of a new local branch to Github. It tells github which local branch is linked to which remote branch:*  
 - *origin = the GitHub repository*
@@ -202,7 +261,7 @@ While you work, teammates may merge changes into main. Before opening a Pull Req
 
 The purpose of `Steps 10–12` is to bring the latest changes from main into your branch, so your branch stays current before opening a PR.
 
-### Step 10: Update Local main
+### 💡 Step 10: Update Local main
 To ensure your branch is up to date with `main`, run the following:
 
 First, return to main:
@@ -215,13 +274,13 @@ Next, download the latest main branch from GitHub and update your local main bra
 git pull origin main
 ```
 
-### Step 11: Return to Your Branch
+### 💡 Step 11: Return to Your Branch
 
 ```bash
 git checkout data/data-cleaning
 ```
 
-### Step 12: Merge main into Your Branch
+### 💡 Step 12: Merge main into Your Branch
 
 ```bash
 git merge main
@@ -254,7 +313,7 @@ git commit -m "Merge main into feature/data-cleaning"
 git push
 ```
 
-### Tip: If you’re unsure how to resolve a conflict, ask a teammate for help before merging.
+### 💡💡💡 Tip: If you’re unsure how to resolve a conflict, ask a teammate for help before merging.
 
 ## Checking for Conflicts (Before Merging)
 
@@ -271,7 +330,7 @@ git log --oneline --graph --all
 ```
 The most reliable conflict check is to actually run git merge main – Git will automatically detect and report any conflicts.
 
-## Creating a Pull Request (PR)
+## 💡 Creating a Pull Request (PR)
 
 After your branch is ready and pushed:
 
@@ -303,7 +362,7 @@ Description:
 - Closes #12 (Read "Linking Issues to Work" below)
 ```
 
-### Linking Issues to Work
+### 💡 Linking Issues to Work
 
 When working on an issue:
 
@@ -325,7 +384,7 @@ Fixes #15
 Related to #5
 ```
 
-## Reviewing and Merging a PR
+## 💡 Reviewing and Merging a PR
 
 ### Review PR
 
@@ -347,7 +406,7 @@ Once merged, the changes become part of `main`.
 If the branch is no longer needed after the merge:
 - Delete the feature branch to keep the repository clean.
 
-## Update Local Repository After a PR is Merged
+## 💡 Update Local Repository After a PR is Merged
 
 After the PR is merged on GitHub, update your local repository:
 
@@ -358,7 +417,7 @@ git pull origin main
 
 Your local `main` branch is now synchronized with GitHub.
 
-## Deleting Branches
+## 💡 Deleting Branches
 If the feature branch is no longer needed, you may delete it locally and remotely.
 
 Delete local branch (safe, only if already merged):
