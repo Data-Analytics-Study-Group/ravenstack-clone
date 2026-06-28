@@ -59,7 +59,7 @@ The repository contains project code, documentation, notebooks, and supporting r
 
 #### Clone the Repository
 
-bash git clone <https://github.com/Data-Analytics-Study-Group/ravenstack-pl.git> cd <ravenstack-pl> 
+bash git clone <https://github.com/Data-Analytics-Study-Group/ravenstack-clone.git> cd <ravenstack-pl> 
 
 #### ⚙️ Environment Setup
 
