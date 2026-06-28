@@ -226,4 +226,6 @@ Related to #5
 
 ### Notes
 
+Contributors: Audrey and Kenyon
+
 This project is currently under active development, so guidelines may evolve over time.
