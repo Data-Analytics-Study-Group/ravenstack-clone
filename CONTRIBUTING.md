@@ -10,8 +10,8 @@ This document outlines the basic workflow and standards for contributing to the 
 
 1. Clone the repository:
 ```bash
-git clone <https://github.com/Data-Analytics-Study-Group/ravenstack-pl.git>
-cd <ravenstack-pl>
+git clone <https://github.com/Data-Analytics-Study-Group/ravenstack-clone.git>
+cd <ravenstack-clone>
 ```
 
 2. Create a new branch for your work:
