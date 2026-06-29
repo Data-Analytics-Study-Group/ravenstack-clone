@@ -99,6 +99,8 @@ Example output:
 
 | Prefix | Purpose |
 |--------|---------|
+| `feature/` | New features or functionality |
+| `bugfix/` | Fixing a bug in code, a broken pipeline, or bad logic |
 | `data/` | Data cleaning or pipeline changes |
 | `explore/` | EDA or one-off investigations |
 | `pipeline/` | ETL/ELT workflows and orchestration (Airflow, dbt, etc.) |
