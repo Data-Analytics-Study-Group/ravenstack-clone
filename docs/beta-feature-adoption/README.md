@@ -1,4 +1,4 @@
-# 2 — Feature Adoption Tracking During Beta Phases
+# 2 - Feature Adoption Tracking During Beta Phases
 
 ---
 
