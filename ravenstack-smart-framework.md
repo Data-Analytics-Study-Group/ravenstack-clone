@@ -1,6 +1,6 @@
-# Ravenstack Customer 360: Aligned SMART Framework
+# Ravenstack Customer 360 : SMART Framework
 
-## Q1: Churn Prediction (Data Science / ML)
+## Q1: Churn Prediction
 **Question:** Can we predict which active accounts will churn within the next 30 days by analyzing their lifetime subscription history and support ticket behavior? 
 
 **Why it matters:** Identifying at-risk customers enables proactive retention efforts (e.g., sending offers or prioritizing support) before the public launch, aiming to reduce overall churn.
@@ -13,7 +13,7 @@
 
 ---
 
-## Q2: Feature Adoption & Churn (Data Analytics & ML)
+## Q2: Feature Adoption & Churn
 **Question:** What are the adoption patterns of beta features across accounts, and does low feature adoption statistically correlate with an increased risk of churn? 
 
 **Why it matters:** Surfaces which beta features are driving engagement versus being ignored, allowing the team to flag zero-adoption accounts for targeted outreach before public launch.
@@ -26,7 +26,7 @@
 
 ---
 
-## Q3: Support Workload Forecasting (Data Science / ML)
+## Q3: Support Workload Forecasting
 **Question:** Can we forecast weekly support ticket volume for the 4 weeks post-launch, segmented by plan tier, to establish a data-backed headcount plan? 
 
 **Why it matters:** Different plan tiers generate varying support volumes. Forecasting with upper confidence bounds prevents the support team from being understaffed during a launch surge.
@@ -39,7 +39,7 @@
 
 ---
 
-## Q4: Revenue Cohort Analysis by Channel (Data Analytics)
+## Q4: Revenue Cohort Analysis by Channel
 **Question:** How much revenue does each acquisition channel generate over time when grouping customers by their signup month and referral source? 
 
 **Why it matters:** Reveals long-term retention and revenue behaviors, guiding pre-launch acquisition budget decisions toward the most profitable channels.
@@ -52,7 +52,7 @@
 
 ---
 
-## Q5: Plan Tier Upgrade Funnel by Industry (Data Analytics)
+## Q5: Plan Tier Upgrade Funnel by Industry
 **Question:** What is the conversion rate of accounts upgrading from the Basic tier to higher tiers (Pro, Enterprise), and how does this vary by industry segment? 
 
 **Why it matters:** Highlights which industries have the highest demand for premium plans, informing targeted upselling and sales strategies.
@@ -65,7 +65,7 @@
 
 ---
 
-## Q6: Monthly Churn Rate Analysis by Plan Tier (Data Analytics)
+## Q6: Monthly Churn Rate Analysis by Plan Tier
 **Question:** What is the monthly churn rate per subscription plan tier during the pilot period, and which tier shows the highest concentration of churn? 
 
 **Why it matters:** Allows the business to focus retention efforts and adjust pricing or plan designs precisely where they are needed before the official launch.
