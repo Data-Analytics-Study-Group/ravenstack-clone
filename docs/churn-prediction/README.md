@@ -88,7 +88,9 @@ Active accounts can be split into 2 distinct groups:
 2. Speed & frequency of adoption (usage log like time since last login, total usage, usage rate)
 3. Support response time trends (average response time, number of tickets)
 4. Plan‑change history (how many subscription plans)
-5. Churn label (binary)
+5. Churn label (binary; 1=churned 0=active)
+6. Split Label = To identify if a record  is part of the “Train” or “Test” data
+
 
 **Training Set**
 - Mature accounts still active on the training cut off date (cannot be less than 30 days from last record)
@@ -107,24 +109,47 @@ Active accounts can be split into 2 distinct groups:
 
 ### Minimum Viable Product (MVP)
 
-**CHURN PREDICTION MODEL:** 
-1. Trained model (.pkl file)
-2. Confusion Matrix: Shows the actual prediction results.
-3. Precision: how many flagged customers actually churned? 
-4. Recall, F1-score: Evaluate performance at chosen threshold (e.g., 0.5).
-5. ROC-AUC: To compare models; evaluates the model’s overall ability to separate churners from non-churners.  
+**CHURN PREDICTION MODEL:**  
+    1. Trained model (.pkl file)
 
-**DATA VIZ, REPORTS AND EXECUTIVE SUMMARY:**
-- List of high‑risk accounts with risk scores and top risk factor
-- Feature importance report (top drivers of churn for mature accounts)
-- Stakeholder report (summary with key findings, recommendations, and visualizations)
-- SHAP 
+*Model Performance*  
+  2. Confusion Matrix: Shows actual vs. predicted results  
+  3. Precision: % of flagged customers who actually churned  
+  4. Recall: % of actual churners caught by the model  
+  5. F1-Score: Harmonic mean of Precision & Recall  
+  6. ROC-AUC: Model's ability to separate churners from non-churners (for comparing models) 
+  
+**Business Deliverables**  
+  7. *Risk Scores: List of high-risk accounts with probabilities and top risk factor  
+  8. Feature Importance: Top drivers of churn with actionable recommendations  
+  9. SHAP Analysis: Individual customer explanations  
+
+**Reports**  
+  10. Stakeholder Report: Executive summary with findings, recommendations, and visualizations
+
+***About * Risk Scores***
+Assign a churn probability (0-100%) to each active customer with a risk tier classification.
+
+| Risk Score | Risk Tier | Recommended Action |
+|------------|-----------|-------------------|
+| 70% - 100% | 🔴 High | Priority outreach, direct intervention |
+| 40% - 69% | 🟡 Medium | Automated re-engagement campaign |
+| 0% - 39% | 🟢 Low | Monitor only |
+
 
 
 ### Metrics
 
 *How success will be measured.*
 
-[Success criteria here]
+Since churn is an imbalanced problem (typically <15% churn rate), we **do not use accuracy**. Instead, we evaluate our model using:
+
+| Metric | Definition | Target | Why |
+|--------|------------|--------|-----|
+| **Recall** | % of actual churners caught by the model | ≥ 75% | **Primary metric.** We want to catch as many churners as possible. Missing a churner = lost revenue. |
+| **Precision** | % of flagged customers who actually churned | ≥ 60% | Measures efficiency. Helps ensure the support team isn't wasting time on false alarms. |
+| **F1-Score** | Harmonic Mean of Recall + Precision. 2 x (R x P)/(R+P) | ≥ 0.65 | Single balanced score for model comparison. |
+| **ROC-AUC** | Ability to separate churners from non-churners | > 0.80 | If we develop  more than one model, we can compare each model’s ability to seperate churners from non-churners to help us choose the best model. |
+| ❌ ~~Accuracy~~ | ~~Overall % correct~~ | ~~N/A~~ | **NOT RECOMMENDED.** Misleading for imbalanced data. |
 
 ---
