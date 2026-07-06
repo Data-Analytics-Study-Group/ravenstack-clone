@@ -75,3 +75,30 @@
 | Calculate the monthly churn rate broken down exclusively by subscription plan tier. | Churn rate = (churned / total active that month) × **100**. | Active subscription statuses and cancellation events are available. | Directly impacts pricing structures and plan design decisions prior to launch. | Limited strictly to the **pilot window** timeframe. |
 
 **Data Inputs:** `ravenstack_subscriptions.csv`, `churn_events.csv`
+
+
+# Ravenstack Customer 360: Task to SMART Question Mapping
+
+This table outlines which proposed task from the team's brainstorming sessions matches the formalized SMART framework questions.
+
+| Team Task | SMART Framework Question | Shared Objective |
+| :--- | :--- | :--- |
+| **Task 1: Churn prediction using subscriptions + support data** | **Q1: Churn Prediction** | Both aim to predict whether an active account will churn within a 30-day window based on lifetime subscription history and support ticket behavior. |
+| **Task 2: Feature adoption tracking during beta phases** | **Q2: Feature Adoption & Churn** | Both focus on analyzing the adoption patterns of beta features to determine if low adoption statistically correlates with a higher risk of churn. |
+| **Task 3: Support workload forecasting** | **Q3: Support Workload Forecasting** | Both involve forecasting weekly support ticket volumes for the 4 weeks post-launch, segmented by plan tier, to help establish operational readiness and headcount planning. |
+| **Task 4: Revenue cohort analysis by referral channel** | **Q4: Revenue Cohort Analysis by Channel** | Both track long-term revenue generation by grouping customers according to their signup month and referral source to calculate metrics like Average MRR and Total ARR. |
+| **Task 5: Plan tier upgrade funnel by industry** | **Q5: Plan Tier Upgrade Funnel by Industry** | Both seek to calculate the conversion rate of accounts upgrading from the Basic tier to higher tiers (Pro, Enterprise) and segment this data by industry. |
+| **Task 6: Monthly Churn Rate Analysis by Plan Tier** | **Q6: Monthly Churn Rate Analysis by Plan Tier** | Both require calculating the monthly churn rate during the pilot period, exclusively broken down by subscription plan tier, to identify where churn is most concentrated. |
+
+---
+
+### Key Alignments & Data Inputs
+
+The mapping above shows a 1:1 alignment between the team's brainstormed tasks and the final SMART questions. Here is a breakdown of the specific shared data inputs required to execute each aligned pairing:
+
+* **Task 1 / Q1:** Relies on `subscriptions.csv`, `support_tickets.csv`, and `churn_events.csv`. 
+* **Task 2 / Q2:** Requires `ravenstack_feature_usage.csv` (filtered by beta features), `ravenstack_subscriptions.csv`, `ravenstack_accounts.csv`, `ravenstack_churn_events.csv`, and derived `churn_risk_scores.csv`. 
+* **Task 3 / Q3:** Combines `ravenstack_support_tickets.csv` with `ravenstack_subscriptions.csv`.
+* **Task 4 / Q4:** Joins `ravenstack_accounts.csv` and `ravenstack_subscriptions.csv`.
+* **Task 5 / Q5:** Utilizes `ravenstack_accounts.csv` and `ravenstack_subscriptions.csv`.
+* **Task 6 / Q6:** Needs `ravenstack_subscriptions.csv` and `churn_events.csv`.
