@@ -1,4 +1,4 @@
-# [03] — [Support Workload Forecasting]
+# 03 - Support Workload Forecasting
 
 ---
 
