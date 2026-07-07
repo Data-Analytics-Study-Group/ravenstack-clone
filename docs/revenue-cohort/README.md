@@ -55,7 +55,12 @@ A method that groups customers into signup cohorts based on their `signup_month`
 
 - Calculate revenue retention rate by dividing each period's aggregated `mrr_amount` by the period 0 `mrr_amount` for that same cohort. Label this clearly as **Revenue Retention %** (not customer/logo retention).
 
-- Calculate Average MRR per acquisition channel: first aggregate (sum) `mrr_amount` per `account_id` (so accounts with multiple subscriptions aren't overweighted), join `referral_source` back in, then `groupby('referral_source')` and take the mean of the account-level totals.
+- Filter subscriptions to active-only using `subscriptions.churn_flag == False `
+  
+- Aggregate (sum) `mrr_amount` per `account_id `
+
+-  Group by `referral_source` and take the mean of the account-level totals from pervious step to get the Average MRR per acquisition channel.
+
 
 - Calculate Total ARR per acquisition channel by summing `arr_amount` grouped by `referral_source` directly (a straight sum isn't affected by how many subscriptions an account has, so no account-level pre-aggregation is needed here).
 
