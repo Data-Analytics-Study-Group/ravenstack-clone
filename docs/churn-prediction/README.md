@@ -55,7 +55,7 @@ Active accounts can be split into 2 distinct groups:
 
 ### What's the plan? Tools?
 
-| Stage | Work to Be Done | Tools |
+| Stage | Work To Be Done | Tools |
 |-------|------------------|-------|
 | **1. Load the data** | **✅ Completed:** Load the raw customer data into the analysis environment. | Neon, SQL, pandas |
 | **2. Clean the data** | **✅ Completed:** Clean and prepare the dataset by handling missing values, correcting data types, removing duplicates, and resolving inconsistencies. | Neon, SQL, pandas, numpy |
