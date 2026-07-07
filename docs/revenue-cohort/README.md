@@ -1,4 +1,4 @@
-#  04 - Revenue Cohort Analysis by Referral Channel
+# 04 — Revenue Cohort Analysis by Referral Channel
 
 ---
 
